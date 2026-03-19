@@ -1,15 +1,17 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 import Home from "./pages/Home";
 import CourseDetails from "./pages/CourseDetails";
 import Learning from "./pages/Learning";
 import Dashboard from "./pages/Dashboard";
-import "./styles/global.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <nav style={{ padding: "10px", background: "#eee" }}>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/dashboard">Dashboard</Link>
+      </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
